@@ -139,7 +139,7 @@ main{
         }
 
         div:has(input:checked){
-            .custon-checkbox{
+            .custon-checkbox {
                 background: var(--color-brand);
                 border: 1px solid var(--color-brand);
                 transition: .2s;
@@ -166,6 +166,37 @@ main{
                 opacity: 0,7;
             }
         }
-    }
-    
+    }  
 }
+
+.warning{
+    background: var(--color-danger);
+    color: var(--always-white);
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1.2rem;
+    margin-top: 2.4rem;
+    opacity: 1;
+    transform: translate(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    i {
+        font-size: 2rem;
+    }
+
+    button {
+        border: none;
+        background: none;
+        color: var(--always-white);
+    }
+
+}
+
