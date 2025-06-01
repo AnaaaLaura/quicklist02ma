@@ -58,12 +58,12 @@ function removeItem(itemName) {
 
 function checkItem(itemName){
     const item = items.find((item) => item.name === itemName)
-
-    if (item.checkItem === true){
+    /*if (item.checkItem === true){
         item.checked = false
     } else {
         item.checked = true
-    }
+    }*/
+    item.checked = ! item.checked 
 
        showItemsList()
  }
