@@ -1,7 +1,7 @@
-const items = []
+let items = []
 
 function addItem() {
-   const itemName = document.querySelector("#item"). value
+   const itemName = document.querySelector("#item").value
 
    const item = {
         name: itemName,
@@ -10,8 +10,6 @@ function addItem() {
 
    items.push(item)
 
-   console.log(items)
-
    document.querySelector("#item").value = ""
 
    showItemsList()
@@ -19,7 +17,7 @@ function addItem() {
 
 function showItemsList() {
     const sectionList = document.querySelector(".list")
-    sectionList.textContent = ""
+     sectionList.textContent = ""
 
     items.map((item, index) => {
         sectionList.innerHTML += `
@@ -27,16 +25,24 @@ function showItemsList() {
                 <div>
                      <input type="checkbox" name="list" id="item-${index}">
 
-                     <div class="custon-checkbox">
+                     <div class="custom-checkbox">
                         <img src="./assets/checked.svg" alt="checked">
                      </div>
                      <label for="item-${index}">${item.name}</label>
                 </div>
 
-                <button>
+                <button onclick="removeItem('${item.name}')">
                     <img src="./assets/trash-icon.svg" alt="trash icon">
                 </button>
             </div>
             `
     })
+}
+
+function removeItem(itemName) {
+    const itemIndex = items.findIndex((item) => item.name === itemName)
+    
+    if (itemIndex !== -1) {
+        items.splice(itemIndex, 1)
+    }
 }
