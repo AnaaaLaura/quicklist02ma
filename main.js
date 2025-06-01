@@ -25,7 +25,7 @@ function showItemsList() {
                 <div>
                      <input type="checkbox" name="list" id="item-${index}">
 
-                     <div class="custom-checkbox">
+                     <div class="custon-checkbox">
                         <img src="./assets/checked.svg" alt="checked">
                      </div>
                      <label for="item-${index}">${item.name}</label>
@@ -41,8 +41,17 @@ function showItemsList() {
 
 function removeItem(itemName) {
     const itemIndex = items.findIndex((item) => item.name === itemName)
+    const divWarning = document.querySelector(".warning")
+
+    divWarning.classList.remove("hide-warning")
+
+    setTimeout(() => {
+        divWarning.classList.add("hide-warning")
+    }, 4000)
     
     if (itemIndex !== -1) {
         items.splice(itemIndex, 1)
     }
+    showItemsList()
+
 }
