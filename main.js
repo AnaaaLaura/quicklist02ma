@@ -14,3 +14,7 @@ function addItem() {
 
    document.querySelector("#item").value = ""
 }
+
+function showItensList() {
+    const sectionList = document.querySelector(".list")
+}
